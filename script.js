@@ -1,6 +1,6 @@
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.letterhead-nav');
+const navMenu = document.querySelector('.site-nav-links');
 
 if (navToggle && navMenu) {
   navToggle.addEventListener('click', () => {
@@ -16,8 +16,8 @@ if (navToggle && navMenu) {
   });
 }
 
-// Scroll-reveal for stamp rows and build log entries
-const revealTargets = document.querySelectorAll('.stamp-row, .commit-log li, .project-spotlight, .badge-card');
+// Scroll-reveal for experience cards, badges, and the project card
+const revealTargets = document.querySelectorAll('.exp-card, .badge-card, .project-mini');
 
 if ('IntersectionObserver' in window && revealTargets.length) {
   const observer = new IntersectionObserver(
@@ -141,17 +141,6 @@ if (themeToggle) {
     const next = current === 'dark' ? 'light' : 'dark';
     applyTheme(next);
     try { localStorage.setItem(THEME_KEY, next); } catch (e) { /* storage unavailable */ }
-  });
-}
-
-// ---- Seal tap delight ----
-const heroSeal = document.querySelector('.hero-seal');
-if (heroSeal) {
-  heroSeal.addEventListener('click', () => {
-    heroSeal.classList.remove('stamped');
-    // force reflow so the animation can replay on repeat clicks
-    void heroSeal.offsetWidth;
-    heroSeal.classList.add('stamped');
   });
 }
 
