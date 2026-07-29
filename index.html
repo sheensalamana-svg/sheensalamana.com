@@ -26,7 +26,15 @@
 
 <header class="site-nav">
   <div class="site-nav-inner">
-    <a href="#top" class="brand-mark">S.M.S.</a>
+    <a href="#top" class="brand-mark">
+      <svg class="brand-logo" width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="9" fill="var(--navy)" stroke="var(--bronze)" stroke-width="1"/>
+        <path d="M27 13c-1.6-1.7-4-2.6-6.4-2.3-3 0.4-5.1 2.6-4.7 5 0.3 1.9 2 2.9 4.6 3.5l2 0.5c3.6 0.9 6.1 2.3 6.5 5.2 0.5 3.4-2.3 6.4-6.6 7-3.2 0.4-6.3-0.6-8.4-2.7" stroke="var(--bronze-light)" stroke-width="2.1" stroke-linecap="round" fill="none"/>
+        <circle cx="13.2" cy="13.6" r="1.6" fill="var(--bronze-light)"/>
+        <circle cx="26.8" cy="26.4" r="1.6" fill="var(--bronze-light)"/>
+      </svg>
+      <span class="brand-mark-text">S.M.S.</span>
+    </a>
 
     <div class="live-stamp" id="liveStamp" aria-live="polite">
       <span class="live-dot"></span>
@@ -40,6 +48,7 @@
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#achievements">Achievements</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -58,7 +67,7 @@
   <section class="hero">
     <div class="hero-text">
       <p class="eyebrow">Administrative &amp; ICT Professional</p>
-      <h1>Hi, I'm<br><span class="accent">Sheen Salamaña</span></h1>
+      <h1>Hi, I'm<br><span class="accent">Sheen</span></h1>
       <p class="hero-role">
         <span class="rotating-tagline" id="rotatingTagline">Career Service Professional Eligible</span>
       </p>
@@ -67,11 +76,11 @@
         now building web applications on the side.
       </p>
       <div class="hero-actions">
-        <a href="assets/Sheen_Salamana_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
-        <a href="#experience" class="btn btn-ghost">See Experience</a>
+        <a href="#experience" class="btn btn-primary">See Experience</a>
+        <a href="#achievements" class="btn btn-ghost">See Achievements</a>
       </div>
       <div class="hero-social">
-        <a href="mailto:sheen.salamana@dfa.gov.ph" aria-label="Email" class="social-icon">
+        <a href="mailto:sheensalamana@gmail.com" aria-label="Email" class="social-icon">
           <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5l8 5 8-5M2 5.5v9a1 1 0 001 1h14a1 1 0 001-1v-9a1 1 0 00-1-1H3a1 1 0 00-1 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
         </a>
         <a href="https://www.linkedin.com/in/sheen-salama%C3%B1a-b41baa1b8/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
@@ -170,13 +179,43 @@
     <div class="badge-grid">
       <div class="badge-card">
         <p class="badge-issuer">DICT</p>
-        <h3>Laravel Web Application Framework</h3>
-        <p class="badge-meta">40 hours · 2026</p>
+        <h3>PHP Web Application Framework: Laravel</h3>
+        <p class="badge-meta">2026</p>
       </div>
       <div class="badge-card">
-        <p class="badge-issuer">Google / Coursera</p>
-        <h3>IT Support Professional Certificate</h3>
-        <p class="badge-meta">2021</p>
+        <p class="badge-issuer">DICT</p>
+        <h3>Blockchain Readiness Program</h3>
+        <p class="badge-meta">2026</p>
+      </div>
+      <div class="badge-card">
+        <p class="badge-issuer">DFA</p>
+        <h3>Cybersecurity Awareness Seminar — "Human Firewall"</h3>
+        <p class="badge-meta">2026</p>
+      </div>
+      <div class="badge-card">
+        <p class="badge-issuer">DFA-HRMO</p>
+        <h3>Blooming Through Change</h3>
+        <p class="badge-meta">2026</p>
+      </div>
+      <div class="badge-card">
+        <p class="badge-issuer">DFA-HRMO</p>
+        <h3>Practical Workplace Ergonomics</h3>
+        <p class="badge-meta">2026</p>
+      </div>
+      <div class="badge-card">
+        <p class="badge-issuer">Civil Service Commission</p>
+        <h3>2025 Rules on Administrative Cases (RACCS)</h3>
+        <p class="badge-meta">2026</p>
+      </div>
+      <div class="badge-card">
+        <p class="badge-issuer">DICT</p>
+        <h3>Empowering Women: Google Workspace AI Tools</h3>
+        <p class="badge-meta">2026</p>
+      </div>
+      <div class="badge-card">
+        <p class="badge-issuer">DFA / National Privacy Commission</p>
+        <h3>Data Privacy Workshop</h3>
+        <p class="badge-meta">2025</p>
       </div>
       <div class="badge-card">
         <p class="badge-issuer">TESDA</p>
@@ -188,82 +227,73 @@
         <h3>Introduction to Cybersecurity</h3>
         <p class="badge-meta">2025</p>
       </div>
-    </div>
-
-    <div class="cert-gallery">
-      <a class="cert-thumb" href="assets/certificates/cert-dap-recognition.jpg" target="_blank" rel="noopener">
-        <img src="assets/certificates/cert-dap-recognition.jpg" alt="Certificate of Recognition, Development Academy of the Philippines, 2025">
-        <div class="cert-thumb-caption">
-          <p class="cert-thumb-title">Certificate of Recognition</p>
-          <p class="cert-thumb-issuer">Development Academy of the Philippines · Nov 2025</p>
-        </div>
-      </a>
-      <a class="cert-thumb" href="assets/certificates/cert-dfa-dataprivacy-2025.jpg" target="_blank" rel="noopener">
-        <img src="assets/certificates/cert-dfa-dataprivacy-2025.jpg" alt="Certificate of Participation, Data Privacy Workshop, DFA and National Privacy Commission, 2025">
-        <div class="cert-thumb-caption">
-          <p class="cert-thumb-title">Data Privacy Workshop</p>
-          <p class="cert-thumb-issuer">DFA &amp; National Privacy Commission · Oct 2025</p>
-        </div>
-      </a>
-      <a class="cert-thumb" href="assets/certificates/cert-google-itsupport.jpg" target="_blank" rel="noopener">
-        <img src="assets/certificates/cert-google-itsupport.jpg" alt="Google IT Support Professional Certificate">
-        <div class="cert-thumb-caption">
-          <p class="cert-thumb-title">Google IT Support</p>
-          <p class="cert-thumb-issuer">Google / Coursera · Feb 2021</p>
-        </div>
-      </a>
-      <a class="cert-thumb" href="assets/certificates/cert-dost-topgrantee.jpg" target="_blank" rel="noopener">
-        <img src="assets/certificates/cert-dost-topgrantee.jpg" alt="Certificate of Recognition, Top Performing Grantee, DOST Caraga Region">
-        <div class="cert-thumb-caption">
-          <p class="cert-thumb-title">Top Performing Grantee</p>
-          <p class="cert-thumb-issuer">DOST — Caraga Region · Jan 2021</p>
-        </div>
-      </a>
-      <a class="cert-thumb" href="assets/certificates/cert-dict-dataprivacy-2021.jpg" target="_blank" rel="noopener">
-        <img src="assets/certificates/cert-dict-dataprivacy-2021.jpg" alt="Certificate of Completion, Data Privacy Protection webinar, DICT">
-        <div class="cert-thumb-caption">
-          <p class="cert-thumb-title">Data Privacy Protection</p>
-          <p class="cert-thumb-issuer">DICT · Mar 2021</p>
-        </div>
-      </a>
-      <a class="cert-thumb" href="assets/certificates/cert-csc-raccs-2026.jpg" target="_blank" rel="noopener">
-        <img src="assets/certificates/cert-csc-raccs-2026.jpg" alt="Certificate of Completion, 2025 Rules on Administrative Cases in the Civil Service (RACCS), Civil Service Commission">
-        <div class="cert-thumb-caption">
-          <p class="cert-thumb-title">RACCS Training</p>
-          <p class="cert-thumb-issuer">Civil Service Commission · Apr 2026</p>
-        </div>
-      </a>
-      <a class="cert-thumb" href="assets/certificates/cert-dfa-cybersecurity-2026.jpg" target="_blank" rel="noopener">
-        <img src="assets/certificates/cert-dfa-cybersecurity-2026.jpg" alt="Certificate of Participation, Cybersecurity Awareness Seminar, Human Firewall: You are the Best Defense, Department of Foreign Affairs">
-        <div class="cert-thumb-caption">
-          <p class="cert-thumb-title">Cybersecurity Awareness Seminar</p>
-          <p class="cert-thumb-issuer">DFA · May 2026</p>
-        </div>
-      </a>
-      <a class="cert-thumb" href="assets/certificates/cert-dict-laravel-2026.jpg" target="_blank" rel="noopener">
-        <img src="assets/certificates/cert-dict-laravel-2026.jpg" alt="Certificate of Attendance, PHP Web Application Framework: Laravel, Department of Information and Communications Technology">
-        <div class="cert-thumb-caption">
-          <p class="cert-thumb-title">Laravel Framework Training</p>
-          <p class="cert-thumb-issuer">DICT · Jun 2026</p>
-        </div>
-      </a>
-    </div>
-
-    <ul class="citation-list">
-      <li><span class="citation-year">Nov 2025</span><span class="citation-text">Letter of Recognition — Department of Foreign Affairs, DAP Paper-less Campaign</span></li>
-      <li><span class="citation-year">Jan 2021</span><span class="citation-text">Top Performing Grantee — Department of Science and Technology, Caraga Region</span></li>
-      <li><span class="citation-year">2016</span><span class="citation-text">Outstanding Augustinian Student (TOAST) — University of San Agustin</span></li>
-      <li><span class="citation-year">2011–2016</span><span class="citation-text">Two-time student organization president; high school student government chairman</span></li>
-    </ul>
-
-    <article class="project-mini">
-      <img src="assets/projects/employee-mgmt-preview.png" alt="Employee Management System preview">
-      <div>
-        <p class="project-tag">Laravel project</p>
-        <h3>Employee Management System</h3>
-        <p>Full CRUD application — authentication, photo uploads, pagination, and a shared layout styled from scratch.</p>
+      <div class="badge-card">
+        <p class="badge-issuer">DICT</p>
+        <h3>Data Privacy Protection</h3>
+        <p class="badge-meta">2021</p>
       </div>
-    </article>
+      <div class="badge-card">
+        <p class="badge-issuer">Google / Coursera</p>
+        <h3>IT Support Professional Certificate</h3>
+        <p class="badge-meta">2021</p>
+      </div>
+      <div class="badge-card">
+        <p class="badge-issuer">DOST — Caraga Region</p>
+        <h3>Top Performing Grantee</h3>
+        <p class="badge-meta">2021</p>
+      </div>
+    </div>
+    <p class="gallery-note">Certificates available on request.</p>
+
+    <div class="recognitions">
+      <div class="recognition-group">
+        <p class="recognition-kicker">Government Service</p>
+        <ul class="citation-list">
+          <li><span class="citation-year">2025</span><span class="citation-text">Special Citation Contributor — DFA Paper-less: 1 Million Sheets Saved Campaign, Development Academy of the Philippines (DAP)</span></li>
+          <li><span class="citation-year">2025</span><span class="citation-text">Letter of Recognition — Department of Foreign Affairs, for contribution to DFA's participation in the DAP Paper-less Campaign</span></li>
+        </ul>
+      </div>
+      <div class="recognition-group">
+        <p class="recognition-kicker">Academic Excellence</p>
+        <ul class="citation-list">
+          <li><span class="citation-year">2021</span><span class="citation-text">Top Performing DOST Grantee — Department of Science and Technology (DOST)</span></li>
+          <li><span class="citation-year">2016</span><span class="citation-text">Outstanding Augustinian Student (TOAST) — University of San Agustin</span></li>
+        </ul>
+      </div>
+      <div class="recognition-group">
+        <p class="recognition-kicker">Leadership Awards</p>
+        <ul class="citation-list">
+          <li><span class="citation-year">2016</span><span class="citation-text">Leadership Award Recipient — University of San Agustin</span></li>
+          <li><span class="citation-year">2016</span><span class="citation-text">Certificate of Recognition — President, Augustinian Computer Engineering Society (ACES)</span></li>
+          <li><span class="citation-year">2016</span><span class="citation-text">Certificate of Recognition — President, Epsilon Alpha Chi Organization (College Student Council)</span></li>
+          <li><span class="citation-year">2011</span><span class="citation-text">Leadership Award — Chairman, NIPSC Laboratory High School Student Government</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section projects" id="projects">
+    <p class="section-eyebrow">Sample Projects</p>
+    <h2 class="section-title">Laravel builds</h2>
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <img src="assets/projects/employee-mgmt-preview.png" alt="Employee Management System preview">
+        <div class="project-card-body">
+          <p class="project-tag">Laravel project</p>
+          <h3>Employee Management System</h3>
+          <p>Full CRUD application — authentication, photo uploads, pagination, and a shared layout styled from scratch.</p>
+        </div>
+      </article>
+      <article class="project-card">
+        <img src="assets/projects/inventory-preview.png" alt="Inventory System preview">
+        <div class="project-card-body">
+          <p class="project-tag">Laravel project</p>
+          <h3>Inventory System</h3>
+          <p>Product tracking app — add, view, and delete stock records with quantity and price management.</p>
+        </div>
+      </article>
+    </div>
   </section>
 
   <section class="section contact-dark" id="contact">
@@ -276,7 +306,7 @@
           I'm happy to hear from you.
         </p>
         <div class="contact-quick">
-          <a href="mailto:sheen.salamana@dfa.gov.ph" aria-label="Email" class="social-icon social-icon-light">
+          <a href="mailto:sheensalamana@gmail.com" aria-label="Email" class="social-icon social-icon-light">
             <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5l8 5 8-5M2 5.5v9a1 1 0 001 1h14a1 1 0 001-1v-9a1 1 0 00-1-1H3a1 1 0 00-1 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
           </a>
           <a href="https://www.linkedin.com/in/sheen-salama%C3%B1a-b41baa1b8/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon social-icon-light">
@@ -284,7 +314,6 @@
           </a>
         </div>
         <p class="contact-location">Pasay City, Philippines</p>
-        <a href="assets/Sheen_Salamana_Resume.pdf" class="btn btn-outline-light" download>Download Resume</a>
       </div>
 
       <form class="contact-form" action="https://formspree.io/f/xdaqbelk" method="POST">

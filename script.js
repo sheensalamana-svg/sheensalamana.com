@@ -17,7 +17,7 @@ if (navToggle && navMenu) {
 }
 
 // Scroll-reveal for experience cards, badges, and the project card
-const revealTargets = document.querySelectorAll('.exp-card, .badge-card, .project-mini');
+const revealTargets = document.querySelectorAll('.exp-card, .badge-card, .project-card');
 
 if ('IntersectionObserver' in window && revealTargets.length) {
   const observer = new IntersectionObserver(
