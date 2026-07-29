@@ -207,17 +207,25 @@ const brandMark = document.querySelector('.brand-mark');
 let brandClickCount = 0;
 let brandClickTimer = null;
 
-function launchConfetti() {
+function launchConfetti(originEl) {
   const colors = ['#A97C50', '#D9BE9A', '#16233F'];
-  for (let i = 0; i < 24; i++) {
+  const rect = originEl ? originEl.getBoundingClientRect() : null;
+  const originX = rect ? rect.left + rect.width / 2 : window.innerWidth / 2;
+  const originY = rect ? rect.top + rect.height / 2 : 80;
+
+  for (let i = 0; i < 14; i++) {
     const piece = document.createElement('span');
     piece.className = 'confetti-piece';
-    piece.style.left = (45 + Math.random() * 10) + 'vw';
+    piece.style.left = originX + 'px';
+    piece.style.top = originY + 'px';
     piece.style.background = colors[i % colors.length];
-    piece.style.animationDelay = (Math.random() * 0.2) + 's';
-    piece.style.setProperty('--drift', (Math.random() * 120 - 60) + 'px');
+    const angle = (Math.random() * Math.PI) - Math.PI / 2 - Math.PI / 4; // upward-ish spread
+    const distance = 40 + Math.random() * 60;
+    piece.style.setProperty('--dx', (Math.cos(angle) * distance) + 'px');
+    piece.style.setProperty('--dy', (Math.sin(angle) * distance - 30) + 'px');
+    piece.style.animationDelay = (Math.random() * 0.08) + 's';
     document.body.appendChild(piece);
-    setTimeout(() => piece.remove(), 1600);
+    setTimeout(() => piece.remove(), 1100);
   }
 }
 
@@ -241,7 +249,7 @@ if (brandMark) {
     if (brandClickCount >= 3) {
       e.preventDefault();
       brandClickCount = 0;
-      launchConfetti();
+      launchConfetti(brandMark);
       showEasterEggToast();
     }
   });

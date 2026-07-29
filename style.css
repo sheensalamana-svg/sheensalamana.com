@@ -730,17 +730,17 @@ html { transition: background 0.2s ease; }
 
 .confetti-piece {
   position: fixed;
-  top: -10px;
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 2px;
   z-index: 9999;
   pointer-events: none;
-  animation: confettiFall 1.4s ease-in forwards;
+  transform: translate(-50%, -50%);
+  animation: confettiBurst 0.9s ease-out forwards;
 }
-@keyframes confettiFall {
-  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-  100% { transform: translate(var(--drift, 0px), 70vh) rotate(540deg); opacity: 0; }
+@keyframes confettiBurst {
+  0% { transform: translate(-50%, -50%) translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) translate(var(--dx, 0px), calc(var(--dy, 0px) + 60px)) rotate(360deg) scale(0.6); opacity: 0; }
 }
 
 .easter-toast {
