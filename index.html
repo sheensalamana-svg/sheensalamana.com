@@ -14,7 +14,7 @@
 <meta name="twitter:title" content="Sheen Morales Salamaña">
 <meta name="twitter:image" content="https://sheensalamana.com/assets/hero-photo.jpg">
 <meta name="theme-color" content="#16233F">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2316233F'/%3E%3Ctext x='50' y='63' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23A97C50' text-anchor='middle'%3ESMS%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19.25' fill='%2316233F' stroke='%23A97C50' stroke-width='1.5'/%3E%3Ctext x='20' y='28' font-family='Georgia,serif' font-weight='700' font-size='17' fill='%23D9BE9A' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -26,14 +26,11 @@
 
 <header class="site-nav">
   <div class="site-nav-inner">
-    <a href="#top" class="brand-mark">
-      <svg class="brand-logo" width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="9" fill="var(--navy)" stroke="var(--bronze)" stroke-width="1"/>
-        <path d="M27 13c-1.6-1.7-4-2.6-6.4-2.3-3 0.4-5.1 2.6-4.7 5 0.3 1.9 2 2.9 4.6 3.5l2 0.5c3.6 0.9 6.1 2.3 6.5 5.2 0.5 3.4-2.3 6.4-6.6 7-3.2 0.4-6.3-0.6-8.4-2.7" stroke="var(--bronze-light)" stroke-width="2.1" stroke-linecap="round" fill="none"/>
-        <circle cx="13.2" cy="13.6" r="1.6" fill="var(--bronze-light)"/>
-        <circle cx="26.8" cy="26.4" r="1.6" fill="var(--bronze-light)"/>
+    <a href="#top" class="brand-mark" aria-label="Sheen Salamaña — Home">
+      <svg class="brand-logo" width="36" height="36" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19.25" fill="var(--navy)" stroke="var(--bronze)" stroke-width="1.5"/>
+        <text x="20" y="28" font-family="Georgia, serif" font-weight="700" font-size="17" fill="var(--bronze-light)" text-anchor="middle">S</text>
       </svg>
-      <span class="brand-mark-text">S.M.S.</span>
     </a>
 
     <div class="live-stamp" id="liveStamp" aria-live="polite">
@@ -67,7 +64,7 @@
   <section class="hero">
     <div class="hero-text">
       <p class="eyebrow">Administrative &amp; ICT Professional</p>
-      <h1>Hi, I'm<br><span class="accent">Sheen</span></h1>
+      <h1>Hi, I'm <span class="accent">Sheen</span></h1>
       <p class="hero-role">
         <span class="rotating-tagline" id="rotatingTagline">Career Service Professional Eligible</span>
       </p>
@@ -285,12 +282,25 @@
           <p>Full CRUD application — authentication, photo uploads, pagination, and a shared layout styled from scratch.</p>
         </div>
       </article>
-      <article class="project-card">
-        <img src="assets/projects/inventory-preview.png" alt="Inventory System preview">
-        <div class="project-card-body">
-          <p class="project-tag">Laravel project</p>
+      <article class="project-card project-card-live">
+        <div class="demo-header">
+          <p class="project-tag">Laravel project · Live demo</p>
           <h3>Inventory System</h3>
-          <p>Product tracking app — add, view, and delete stock records with quantity and price management.</p>
+          <p>Add and remove stock records — this is a real, working version of the CRUD logic, right in the page.</p>
+        </div>
+        <div class="demo-inventory">
+          <form class="demo-form" id="demoInventoryForm">
+            <input type="text" id="demoProductName" placeholder="Product name" required>
+            <input type="number" id="demoProductQty" placeholder="Qty" min="0" required>
+            <input type="number" id="demoProductPrice" placeholder="Price" min="0" step="0.01" required>
+            <button type="submit" class="btn btn-primary demo-add-btn">Add</button>
+          </form>
+          <table class="demo-table">
+            <thead>
+              <tr><th>Name</th><th>Qty</th><th>Price</th><th></th></tr>
+            </thead>
+            <tbody id="demoInventoryBody"></tbody>
+          </table>
         </div>
       </article>
     </div>

@@ -98,7 +98,7 @@ setInterval(updateWeather, 30 * 60 * 1000); // refresh every 30 minutes
 // ---- Rotating hero tagline ----
 const taglineEl = document.getElementById('rotatingTagline');
 const TAGLINES = [
-  'Administrative & ICT Professional',
+  'Career Service Professional Eligible',
   'Records & Documentation Specialist',
   'Self-Taught Web Developer',
   'Government Service, Technical Mind',
@@ -144,4 +144,106 @@ if (themeToggle) {
   });
 }
 
+// ---- Live inventory demo ----
+const demoForm = document.getElementById('demoInventoryForm');
+const demoBody = document.getElementById('demoInventoryBody');
+
+let demoItems = [
+  { name: 'Wireless Mouse', qty: 15, price: 599 },
+  { name: 'Keyboard', qty: 50, price: 999 },
+];
+
+function renderDemoInventory() {
+  if (!demoBody) return;
+  demoBody.innerHTML = '';
+  if (demoItems.length === 0) {
+    const row = document.createElement('tr');
+    row.className = 'demo-empty-row';
+    row.innerHTML = '<td colspan="4">No items yet — add one above.</td>';
+    demoBody.appendChild(row);
+    return;
+  }
+  demoItems.forEach((item, i) => {
+    const row = document.createElement('tr');
+    const priceLabel = '\u20B1' + Number(item.price).toFixed(2);
+    row.innerHTML =
+      '<td></td><td></td><td></td><td></td>';
+    row.children[0].textContent = item.name;
+    row.children[1].textContent = item.qty;
+    row.children[2].textContent = priceLabel;
+    const delBtn = document.createElement('button');
+    delBtn.type = 'button';
+    delBtn.className = 'demo-delete-btn';
+    delBtn.textContent = 'Delete';
+    delBtn.addEventListener('click', () => {
+      demoItems.splice(i, 1);
+      renderDemoInventory();
+    });
+    row.children[3].appendChild(delBtn);
+    demoBody.appendChild(row);
+  });
+}
+
+if (demoForm) {
+  demoForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nameEl = document.getElementById('demoProductName');
+    const qtyEl = document.getElementById('demoProductQty');
+    const priceEl = document.getElementById('demoProductPrice');
+    const name = nameEl.value.trim();
+    const qty = Number(qtyEl.value);
+    const price = Number(priceEl.value);
+    if (!name || qty < 0 || price < 0) return;
+    demoItems.push({ name, qty, price });
+    demoForm.reset();
+    nameEl.focus();
+    renderDemoInventory();
+  });
+  renderDemoInventory();
+}
+
+// ---- Logo Easter egg ----
+const brandMark = document.querySelector('.brand-mark');
+let brandClickCount = 0;
+let brandClickTimer = null;
+
+function launchConfetti() {
+  const colors = ['#A97C50', '#D9BE9A', '#16233F'];
+  for (let i = 0; i < 24; i++) {
+    const piece = document.createElement('span');
+    piece.className = 'confetti-piece';
+    piece.style.left = (45 + Math.random() * 10) + 'vw';
+    piece.style.background = colors[i % colors.length];
+    piece.style.animationDelay = (Math.random() * 0.2) + 's';
+    piece.style.setProperty('--drift', (Math.random() * 120 - 60) + 'px');
+    document.body.appendChild(piece);
+    setTimeout(() => piece.remove(), 1600);
+  }
+}
+
+function showEasterEggToast() {
+  const toast = document.createElement('div');
+  toast.className = 'easter-toast';
+  toast.textContent = "You found it! Thanks for exploring \uD83D\uDC4B";
+  document.body.appendChild(toast);
+  setTimeout(() => toast.classList.add('show'), 10);
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 400);
+  }, 2600);
+}
+
+if (brandMark) {
+  brandMark.addEventListener('click', (e) => {
+    brandClickCount += 1;
+    clearTimeout(brandClickTimer);
+    brandClickTimer = setTimeout(() => { brandClickCount = 0; }, 900);
+    if (brandClickCount >= 3) {
+      e.preventDefault();
+      brandClickCount = 0;
+      launchConfetti();
+      showEasterEggToast();
+    }
+  });
+}
 
