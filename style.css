@@ -728,19 +728,53 @@ html { transition: background 0.2s ease; }
 [data-theme="dark"] .btn-ghost:hover { background: var(--paper-2); }
 [data-theme="dark"] .project-card { background: var(--paper-2); }
 
-.confetti-piece {
+.firework-rocket {
   position: fixed;
-  width: 7px;
-  height: 7px;
-  border-radius: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #D9BE9A;
+  box-shadow: 0 0 6px 2px rgba(217, 190, 154, 0.7);
   z-index: 9999;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  animation: confettiBurst 0.9s ease-out forwards;
+  animation: rocketRise 0.32s ease-out forwards;
 }
-@keyframes confettiBurst {
-  0% { transform: translate(-50%, -50%) translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
-  100% { transform: translate(-50%, -50%) translate(var(--dx, 0px), calc(var(--dy, 0px) + 60px)) rotate(360deg) scale(0.6); opacity: 0; }
+@keyframes rocketRise {
+  0% { transform: translate(-50%, -50%) translateY(0); opacity: 1; }
+  100% { transform: translate(-50%, -50%) translateY(calc(var(--rise, 70px) * -1)); opacity: 1; }
+}
+
+.firework-flash {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242,217,168,0.9) 0%, rgba(242,217,168,0) 70%);
+  z-index: 9999;
+  pointer-events: none;
+  animation: flashPop 0.35s ease-out forwards;
+}
+@keyframes flashPop {
+  0% { transform: scale(0.3); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.firework-spark {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: sparkBurst 0.75s ease-out forwards;
+}
+@keyframes sparkBurst {
+  0% { transform: translate(-50%, -50%) translate(0, 0) scale(1); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: translate(-50%, -50%) translate(var(--dx, 0px), calc(var(--dy, 0px) + 24px)) scale(0.4); opacity: 0; }
 }
 
 .easter-toast {

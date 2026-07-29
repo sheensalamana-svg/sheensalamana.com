@@ -207,26 +207,49 @@ const brandMark = document.querySelector('.brand-mark');
 let brandClickCount = 0;
 let brandClickTimer = null;
 
-function launchConfetti(originEl) {
-  const colors = ['#A97C50', '#D9BE9A', '#16233F'];
+function launchFireworks(originEl) {
+  const colors = ['#D9BE9A', '#A97C50', '#F2D9A8'];
   const rect = originEl ? originEl.getBoundingClientRect() : null;
   const originX = rect ? rect.left + rect.width / 2 : window.innerWidth / 2;
   const originY = rect ? rect.top + rect.height / 2 : 80;
+  const riseHeight = 70 + Math.random() * 20;
 
-  for (let i = 0; i < 14; i++) {
-    const piece = document.createElement('span');
-    piece.className = 'confetti-piece';
-    piece.style.left = originX + 'px';
-    piece.style.top = originY + 'px';
-    piece.style.background = colors[i % colors.length];
-    const angle = (Math.random() * Math.PI) - Math.PI / 2 - Math.PI / 4; // upward-ish spread
-    const distance = 40 + Math.random() * 60;
-    piece.style.setProperty('--dx', (Math.cos(angle) * distance) + 'px');
-    piece.style.setProperty('--dy', (Math.sin(angle) * distance - 30) + 'px');
-    piece.style.animationDelay = (Math.random() * 0.08) + 's';
-    document.body.appendChild(piece);
-    setTimeout(() => piece.remove(), 1100);
-  }
+  // Stage 1: rocket trail rising from the logo
+  const rocket = document.createElement('span');
+  rocket.className = 'firework-rocket';
+  rocket.style.left = originX + 'px';
+  rocket.style.top = originY + 'px';
+  rocket.style.setProperty('--rise', riseHeight + 'px');
+  document.body.appendChild(rocket);
+
+  setTimeout(() => {
+    rocket.remove();
+    const burstY = originY - riseHeight;
+
+    // brief flash at the burst point
+    const flash = document.createElement('span');
+    flash.className = 'firework-flash';
+    flash.style.left = originX + 'px';
+    flash.style.top = burstY + 'px';
+    document.body.appendChild(flash);
+    setTimeout(() => flash.remove(), 350);
+
+    // Stage 2: radial spark burst
+    const sparkCount = 16;
+    for (let i = 0; i < sparkCount; i++) {
+      const spark = document.createElement('span');
+      spark.className = 'firework-spark';
+      spark.style.left = originX + 'px';
+      spark.style.top = burstY + 'px';
+      spark.style.background = colors[i % colors.length];
+      const angle = (Math.PI * 2 * i) / sparkCount + (Math.random() * 0.3 - 0.15);
+      const distance = 45 + Math.random() * 35;
+      spark.style.setProperty('--dx', (Math.cos(angle) * distance) + 'px');
+      spark.style.setProperty('--dy', (Math.sin(angle) * distance) + 'px');
+      document.body.appendChild(spark);
+      setTimeout(() => spark.remove(), 750);
+    }
+  }, 320);
 }
 
 function showEasterEggToast() {
@@ -249,7 +272,7 @@ if (brandMark) {
     if (brandClickCount >= 3) {
       e.preventDefault();
       brandClickCount = 0;
-      launchConfetti(brandMark);
+      launchFireworks(brandMark);
       showEasterEggToast();
     }
   });
