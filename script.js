@@ -235,7 +235,7 @@ function chargeUpLogo(originEl, onComplete) {
   setTimeout(() => {
     originEl.classList.remove('charging');
     onComplete();
-  }, 5000);
+  }, 2000);
 }
 
 function showEasterEggToast() {

@@ -745,7 +745,7 @@ html { transition: background 0.2s ease; }
 }
 
 .brand-mark.charging .brand-logo {
-  animation: logoCharge 0.6s ease-in-out infinite;
+  animation: logoCharge 0.5s ease-in-out infinite;
 }
 @keyframes logoCharge {
   0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(169, 124, 80, 0)); }
@@ -762,7 +762,7 @@ html { transition: background 0.2s ease; }
   border-radius: 50%;
   border: 2px solid var(--bronze);
   opacity: 0;
-  animation: chargeRing 1.4s ease-out infinite;
+  animation: chargeRing 1s ease-out infinite;
   pointer-events: none;
 }
 @keyframes chargeRing {
